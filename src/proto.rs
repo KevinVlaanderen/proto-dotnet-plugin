@@ -46,7 +46,7 @@ pub fn register_tool(Json(_): Json<ToolMetadataInput>) -> FnResult<Json<ToolMeta
 #[plugin_fn]
 pub fn load_versions(Json(_): Json<LoadVersionsInput>) -> FnResult<Json<LoadVersionsOutput>> {
     // we previously used the dotnet/sdk repo here as it included v2, but all prerelease versions were slightly off
-    let versions = load_git_tags("https://github.com/dotnet/installer")?
+    let versions = load_git_tags("https://github.com/dotnet/sdk")?
         .iter()
         .filter_map(|tag| tag.strip_prefix("v"))
         .filter(|tag| !tag.is_empty())
