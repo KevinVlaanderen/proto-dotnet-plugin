@@ -116,7 +116,7 @@ pub fn native_install(
     let version = &input.context.version;
 
     let is_windows = env.os.is_windows();
-    let script_path = PathBuf::from("/proto/temp").join(if is_windows {
+    let script_path = PathBuf::from("~/.proto/temp").join(if is_windows {
         "dotnet-install.ps1"
     } else {
         "dotnet-install.sh"
